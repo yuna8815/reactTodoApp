@@ -21,6 +21,10 @@ export default function App() {
     setTodoData(newTodoData)
   }, [todoData])
 
+  const handleRemoveClick = () => {
+    setTodoData([])
+  };
+
   const handleSubmit = (e) => {
     // 페이지의 리로드를 방지
     e.preventDefault();
@@ -40,6 +44,7 @@ export default function App() {
       <div className="w-full p-6 m-4 bg-white rounded shadow lg:w-3/4 lg:max-w-lg">
         <div className="flex justify-between mb-3">
           <h1>할일 목록</h1>
+          <button onClick={handleRemoveClick}>Delete All</button>
         </div>
 
         <Lists
