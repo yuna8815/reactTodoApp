@@ -17,6 +17,7 @@ const Lists = React.memo(({
     
     newTodoData.splice(e.destination.index, 0, reorderedItem)
     setTodoData(newTodoData)
+    localStorage.setItem('todoData', JSON.stringify(newTodoData))
   }
   return (
     <div>
